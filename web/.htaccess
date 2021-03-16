@@ -1,0 +1,6 @@
+<ifModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    SetEnvIf Origin "http(s)?://(www.)?(chip.vimasters.com:880|chip.vimasters.com|chip.vimasters.com:8080|vimasters.com:8080)$" AccessControlAllowOrigin=$0
+    Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+    Header always set Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+</ifModule>
